@@ -1,0 +1,16 @@
+= Readme
+
+This is a very simple plugin that attempts to measure your productivity. It's meant to be used
+in a "what's gets measured gets improved" philosophy. 
+
+
+It scans your current directory recursively, looking in each file for interesting keywords. It then reports
+on those keywords. 
+
+If your goal is more lines of code per day, or refactoring as much as possible, or using more metaprogramming
+techniques, MeasureMe can help.
+
+Limitations:
+
+MeasureMe is using a very simple scanning, so it's trivial to defeat by including comments that have interesting keywords
+MeasureMe is not yet tracking activities from 'start' to 'finish'

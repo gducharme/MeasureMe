@@ -1,0 +1,33 @@
+#!/usr/bin/env ruby
+## MeasureMe is a command line tool to measure the amount of code 
+## in a directory.
+## Usage: measureme -s[-start] -p[stop]
+##
+## Track the amount of code you produce in a day. Measureme
+## also discriminates the amount of metaprogramming you produce in a
+## day.
+
+require 'optparse'
+
+def usage
+  File.readlines(__FILE__).
+  grep(/^##.*/).
+  map {|line| line.chomp[3..-1]}.
+  join("\n")
+end
+
+begin
+  require 'measureme'
+rescue LoadError
+  raise if $!.to_s !~ /measureme/
+  libdir = File.expand_path("../../lib", __FILE__).sub(/^#{Dir.pwd}/, '.')
+  if !$:.include?(libdir)
+    $:.unshift libdir
+    require File.expand_path('../../.bundle/environment', __FILE__)
+    retry
+  end
+  raise
+end
+
+m = MeasureMe::Measurer.new
+m.measure
