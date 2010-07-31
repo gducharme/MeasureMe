@@ -33,7 +33,7 @@ module MeasureMe
     end
 
     def get_stats(path)
-      total_size += FileTest.size(path)
+      @total_size += FileTest.size(path)
       IO.foreach(path) do |block| 
         @lines +=1
         if @reg.match(block)
