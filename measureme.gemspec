@@ -11,8 +11,8 @@ Gem::Specification.new do |s|
   s.description = %q{Measure the amount of code created in a day}
   s.email = %q{geoffrey.ducharme@gmail.com}
   s.executables = ["measureme"]
-  s.extra_rdoc_files = ["README.rdoc", "bin/measureme", "lib/exp.rb", "lib/measureme.rb"]
-  s.files = ["README.rdoc", "Rakefile", "bin/measureme", "lib/exp.rb", "lib/measureme.rb", "Manifest", "measureme.gemspec"]
+  s.extra_rdoc_files = ["README.rdoc", "bin/measureme", "lib/measureme.rb"]
+  s.files = ["README.rdoc", "Rakefile", "bin/measureme", "lib/measureme.rb", "measureme.gemspec", "Manifest"]
   s.homepage = %q{http://github.com/gducharme/measureme}
   s.rdoc_options = ["--line-numbers", "--inline-source", "--title", "Measureme", "--main", "README.rdoc"]
   s.require_paths = ["lib"]
