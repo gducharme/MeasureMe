@@ -35,8 +35,8 @@ module MeasureMe
 
     def get_stats(path)
       @total_size += FileTest.size(path)
-      File.open(path, 'r').each {|l| @lines += 1}
-      IO.foreach(path) do |block| 
+      File.open(path, 'r').each do |block| 
+        @lines += 1
         block.split(" ").each do |splinter|
           if @reg.match(splinter)
             @good_stuff[$~[0]] += 1
@@ -46,6 +46,3 @@ module MeasureMe
     end
   end
 end
-
-m = MeasureMe::Measurer.new
-m.measure
