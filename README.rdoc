@@ -1,7 +1,7 @@
 = Readme
 
 This is a very simple plugin that attempts to measure your productivity. It's meant to be used
-in a "what's gets measured gets improved" philosophy. 
+in a "what gets measured gets improved" philosophy.
 
 
 It scans your current directory recursively, looking in each file for interesting keywords. It then reports
