@@ -19,14 +19,8 @@ end
 begin
   require 'measureme'
 rescue LoadError
-  raise if $!.to_s !~ /measureme/
-  libdir = File.expand_path("../../lib", __FILE__).sub(/^#{Dir.pwd}/, '.')
-  if !$:.include?(libdir)
-    $:.unshift libdir
-    require File.expand_path('../../.bundle/environment', __FILE__)
-    retry
-  end
-  raise
+  libdir = File.expand_path('../../lib', __FILE__)
+  require File.join(libdir, 'measureme')
 end
 
 m = MeasureMe::Measurer.new
